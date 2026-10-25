@@ -516,7 +516,7 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 150px;
+  height: 300px;
   overflow: hidden;
   border-radius: 6px;
   background: #eaf0fa;
@@ -874,7 +874,7 @@ h2 {
   }
 
   .person-portrait {
-    height: 155px;
+    height: 310px;
   }
 
   .person-name {
