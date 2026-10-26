@@ -65,8 +65,8 @@ h2 {
 }
 
 .container {
-  width: min(1100px, calc(100% - 64px));
-  margin-inline: auto;
+  width: 100%;
+  padding-inline: clamp(20px, 6vw, 120px);
 }
 
 .mono {
@@ -161,6 +161,7 @@ h2 {
 .hero {
   padding-top: clamp(30px, 5vw, 65px);
   background: linear-gradient(135deg, #fbfcfe 35%, #f0f4fc);
+  border-bottom: 1px solid var(--border);
 }
 
 .eyebrow {
@@ -454,13 +455,12 @@ h2 {
 
 .about-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 580px);
   align-items: start;
-  gap: 40px;
+  gap: 40px 64px;
 }
 
 .about-description {
-  max-width: 550px;
   color: var(--text-soft);
   font-size: 16px;
   line-height: 1.85;
@@ -472,12 +472,12 @@ h2 {
 }
 
 .mentors {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
-  align-items: baseline;
-  gap: 20px 40px;
-  margin-top: 36px;
-  padding-top: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  padding-block: 16px 22px;
   border-top: 1px solid var(--border);
 }
 
@@ -488,8 +488,14 @@ h2 {
 .mentor-names {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px 26px;
-  font-size: 14px;
+  gap: 4px 0;
+  color: var(--text);
+}
+
+.mentor-names span + span::before {
+  content: "·";
+  margin-inline: 14px;
+  color: var(--blue);
 }
 
 .team-title {
@@ -498,13 +504,13 @@ h2 {
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 14px;
 }
 
 .person-card {
   min-width: 0;
-  padding: 15px;
+  padding: 12px;
   border: 1px solid var(--border);
   border-radius: 10px;
   background: var(--surface);
@@ -516,7 +522,7 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 300px;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   border-radius: 6px;
   background: #eaf0fa;
@@ -533,15 +539,15 @@ h2 {
 }
 
 .person-portrait::before {
-  top: 42px;
-  width: 195px;
-  height: 195px;
+  top: 14%;
+  width: 66%;
+  height: 66%;
 }
 
 .person-portrait::after {
-  top: 62px;
-  width: 150px;
-  height: 150px;
+  top: 21%;
+  width: 50%;
+  height: 50%;
 }
 
 .person-initials {
@@ -549,41 +555,41 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 68px;
-  height: 68px;
-  border: 6px solid #f3f6fc;
+  width: 56px;
+  height: 56px;
+  border: 5px solid #f3f6fc;
   border-radius: 50%;
   background: #d5e2f5;
   color: #395983;
   font-family: var(--font-heading);
-  font-size: 29px;
+  font-size: 24px;
   font-weight: 500;
   letter-spacing: -1px;
 }
 
 .person-study {
   position: absolute;
-  top: 10px;
-  right: 12px;
+  top: 8px;
+  right: 8px;
   color: #456080;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 10px;
 }
 
 .person-name {
-  margin-top: 15px;
-  font-size: 17px;
+  margin-top: 12px;
+  font-size: 15px;
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.4;
   letter-spacing: -0.25px;
 }
 
 .person-email {
   display: inline-block;
   max-width: 100%;
-  padding-block: 5px;
+  padding-block: 4px;
   color: var(--text-soft);
-  font-size: 13px;
+  font-size: 12px;
   overflow-wrap: anywhere;
   transition: color 160ms ease;
 }
@@ -595,16 +601,16 @@ h2 {
 .person-roles {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 11px;
+  gap: 5px;
+  margin-top: 9px;
 }
 
 .role-tag {
-  padding: 4px 8px;
+  padding: 3px 7px;
   border-radius: 4px;
   background: var(--blue-light);
   color: #24458c;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
   line-height: 1.5;
 }
@@ -616,9 +622,9 @@ h2 {
 
 .notes-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 580px);
   align-items: start;
-  gap: 40px;
+  gap: 40px 64px;
 }
 
 .meeting-list {
@@ -629,9 +635,9 @@ h2 {
 
 .meeting-row {
   display: grid;
-  grid-template-columns: 28px minmax(0, 1fr) auto;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
   align-items: center;
-  gap: 14px;
+  gap: 20px;
   padding-block: 20px;
   border-bottom: 1px solid var(--border);
 }
@@ -704,26 +710,36 @@ h2 {
   line-height: 1.8;
 }
 
+@media (max-width: 1100px) {
+  .team-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
 @media (max-width: 900px) {
   .hero-grid {
     gap: 24px;
   }
 
-  .team-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-  }
-
   .about-grid,
-  .mentors,
   .notes-grid {
     column-gap: 28px;
   }
 }
 
 @media (max-width: 700px) {
-  .container {
-    width: calc(100% - 40px);
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .person-name {
+    font-size: 17px;
+  }
+
+  .person-email {
+    font-size: 13px;
   }
 
   .header-inner {
@@ -769,18 +785,22 @@ h2 {
   }
 
   .about-grid,
-  .mentors,
   .notes-grid {
     grid-template-columns: 1fr;
     gap: 23px;
   }
 
   .mentors {
-    gap: 12px;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .mentor-names {
     flex-direction: column;
+  }
+
+  .mentor-names span + span::before {
+    content: none;
   }
 
   .about-description {
@@ -874,7 +894,7 @@ h2 {
   }
 
   .person-portrait {
-    height: 310px;
+    aspect-ratio: 4 / 3;
   }
 
   .person-name {
@@ -957,4 +977,10 @@ h2 {
   padding: 2px 6px;
   border-radius: 4px;
   background: #f3f6fc;
+}
+
+@media (min-width: 901px) {
+  .editor-preview {
+    margin-inline: auto 0;
+  }
 }
